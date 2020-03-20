@@ -1,0 +1,16 @@
+@using HairSalon.Models;
+@model List<HairSalon.Models.Stylist> //model directive. gives this view access to the necessary list of stylists.
+
+<h1>Stylists</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No stylists have been added yet.</h3>
+}
+
+@foreach(Stylist stylist in Model)
+{
+  //$"{}" - I pass value of specialty into a string
+  //new { id = stylist.StylistId} - this is how .NET knows which id to use in the Details action. new means we are creating an anonumous object with property id.
+  <li>@Html.ActionLink($"{stylist.Specialty}", "Details", new {id = stylist.StylistId})</li>
+}
