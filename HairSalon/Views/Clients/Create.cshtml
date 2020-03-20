@@ -6,8 +6,8 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
-  <input id="StylistId" name="StylistId" type="hidden" value="@ViewBag.Stylist.StylistId">
+  @* <input id="StylistId" name="StylistId" type="hidden" value="@ViewBag.Stylist.StylistId"> *@
   <input type="submit" value="add client">
 }
 
-<p>@Html.ActionLink("Back to Stylists", "Details", "Stylist")</p>
+<p>@Html.ActionLink("Show all clients", "Index")</p>
