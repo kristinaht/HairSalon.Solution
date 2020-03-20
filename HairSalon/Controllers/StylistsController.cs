@@ -33,5 +33,16 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+
+      // int id needs to match the anonymous object created previously.
+      //look at _db.Stylists -- this is stylists table in database
+      //find stylists where Stylistid matches the id passed into this method.
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
+
+    }
   }
 }
