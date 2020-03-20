@@ -6,11 +6,11 @@ namespace HairSalon.Models
   {
     public int StylistId { get; set; }
     public string Specialty { get; set; }
-    public virtual ICollection<Stylist> Stylists { get; set; }
+    public virtual ICollection<Client> Clients { get; set; }
 
     public Stylist()
     {
-      this.Stylists = new HashSet<Stylist>();
+      this.Clients = new HashSet<Client>();
     }
   }
 }
