@@ -7,10 +7,12 @@
   {
     <h3>No clients added yet</h3>
   }
-
+  
   @foreach (Client client in Model)
   {
-    <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Specialty</li>
+    <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.StylistId</li>
+    // this needs to be added but is showing the "not an instance of an object error:
+    // @client.Stylist.Specialty
    
   }
 
