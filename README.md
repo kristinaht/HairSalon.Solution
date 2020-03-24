@@ -9,9 +9,21 @@ MVC application for a Hair Salon that allows user to add new Stylists and add ne
 
 ## Project Specifications
 
-Action
+1. From "/" route user is redirected to the page that displays all stylists
+* Input: Click "See all stylists"
+* Output: redirect to /Stylists
+
+2. From /Stylists route, user completes a form to add new stylist
+* Input: Specialty: coloring, than click "Add stylist"
+* Output: Application creates new stylist in database and user is redirected to "Stylists" where the list of stylists is displayed
+
+3. User clicks on a stylist in the /Stylists route to see specific stylist details ("/Details") 
+* Input: Clicks on "coloring" link
+* Output: User is redirected to /Stylists/Details/1 route and the following is displayed: Specialty: coloring; No clients found;
+
+4. User adds new client for the Stylist
 * Input: 
-* Output: 
+
 
 ## Setup/Installation Requirements
 
