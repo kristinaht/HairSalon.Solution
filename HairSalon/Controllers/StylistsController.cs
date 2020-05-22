@@ -65,7 +65,7 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmet(int id){
+    public ActionResult DeleteConfirmed(int id){
       var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
       _db.Remove(thisStylist);
       _db.SaveChanges();
