@@ -33,30 +33,30 @@ namespace HairSalon.Controllers
     {
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Index");
-      // return RedirectToAction("Details", "Stylists", new {id = client.StylistId});
+      // return RedirectToAction("Index");
+      return RedirectToAction("Details", "Stylists", new {id = client.StylistId});
     }
 
     public ActionResult Details(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name", "Specialty");
+      // ViewBag.Stylist = new SelectList(_db.Stylists, "StylistId", "Name", "Specialty");
       return View(thisClient);
     }
 
-    public ActionResult Edit(int id)
-    {
-      var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StulistId", "Name", "Specialty");
-      return View(thisClient);
-    }
+    // public ActionResult Edit(int id)
+    // {
+    //   var thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
+    //   ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name", "Specialty");
+    //   return View(thisClient);
+    // }
 
-    [HttpPost]
-    public ActionResult Edit(Client client)
-    {
-      _db.Entry(client).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
+    // [HttpPost]
+    // public ActionResult Edit(Client client)
+    // {
+    //   _db.Entry(client).State = EntityState.Modified;
+    //   _db.SaveChanges();
+    //   return RedirectToAction("Index");
+    // }
   }
 }

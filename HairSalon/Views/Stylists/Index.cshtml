@@ -17,7 +17,7 @@
 {
   //$"{}" - I pass value of specialty into a string
   //new { id = stylist.StylistId} - this is how .NET knows which id to use in the Details action. new means we are creating an anonumous object with property id.
-  <li>@Html.ActionLink($"{stylist.Specialty}", "Details", new {id = stylist.StylistId})</li>
+  <li>@Html.ActionLink($"{stylist.Name}", "Details", new {id = stylist.StylistId})</li>
 }
 
 <p>@Html.ActionLink("Add new stylist", "Create")</p>
