@@ -7,8 +7,8 @@
 
 <h2>Client Details</h2>
 <h3>@Html.DisplayFor(model => model.Name)</h3>
-<h3>Stylist: @ViewBag.Stylist.Name</h3>
+<h3>Stylist: @ViewBag.Stylist.Specialty</h3>
 
 <p>@Html.ActionLink("Back to clients", "Index", "Clients", new { id = Model.ClientId })</p>
-@* <p>@Html.ActionLink("Edit", "Edit", new { id =Model.ClientId })</p> *@
+<p>@Html.ActionLink("Edit", "Edit", new { id =Model.ClientId })</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
