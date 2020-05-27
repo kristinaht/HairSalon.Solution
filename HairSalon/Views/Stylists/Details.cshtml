@@ -6,22 +6,43 @@
 @using HairSalon.Models;
 @model HairSalon.Models.Stylist;
 
-<h2>Stylist Details</h2>
-<h3>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.DisplayNameFor(model => model.Specialty) : @Html.DisplayFor(model => model.Specialty)</h3>
+<div class="flip-card" style="width: 300px;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h2>Stylist Details</h2>
+      <h3>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)</h3>
+      <h3>@Html.DisplayNameFor(model => model.Specialty) : @Html.DisplayFor(model => model.Specialty)</h3>
+    </div>
+    <div class="flip-card-back">
+      <ul>
+        @if (@Model.Clients.Count == 0)
+        {
+          <li>No clients found</li>
+        }
 
-<ul>
-  @if (@Model.Clients.Count == 0)
-  {
-    <li>No clients found</li>
-  }
+        @foreach(Client client in Model.Clients)
+        {
+          @* <li>Client | @client.Name</li> *@
+          <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li>
+        }
+      </ul>
+    </div>
+  </div>  
+</div>
 
-  @foreach(Client client in Model.Clients)
+
+@* <ul>
+  @if (@Model.Appointments.Count == 0)
   {
-    @* <li>Client | @client.Name</li> *@
-    <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId})</li>
-  }
-</ul>
+    <li>No appointments</li>
+  } *@
+
+  @* @foreach(Appointment appointment in Model.Appointments)
+  {
+    <li>@appointment.Date</li>
+    <li>@appointment.Notes</li>
+  } *@
+@* </ul> *@
 
 <p>@Html.ActionLink("Back to Stylists", "Index")</p>
 <p>@Html.ActionLink("Edit", "Edit", new {id = Model.StylistId })</p>
