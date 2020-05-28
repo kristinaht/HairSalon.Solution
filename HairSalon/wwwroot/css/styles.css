@@ -25,6 +25,32 @@ h1 {
 }
 
 .flip-card {
+  background-color: #49182394;
+  margin: 0 auto;
+  float: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.911);
+  padding: 10px;
+}
+
+li {
+  text-decoration: none;
+}
+.flip-card-back ul {
+  padding: 0;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+
+
+h4 {
+  text-align: center;
+}
+/* 
+.flip-card {
   margin: 0 auto;
   float: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.911);
@@ -39,10 +65,10 @@ h1 {
   perspective: 1000px;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.911);
   transition: 0.3s; */
-  border: 2px solid;
+  /* border: 2px solid;
  
-}
-
+} */
+/* 
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -59,19 +85,19 @@ h1 {
 
 .flip-card-front, .flip-card-back {
   /* position: absolute; */
-  width: 100%;
+  /* width: 100%;
   line-height: 70px;
-  height: 100%;
-  backface-visibility: hidden;
-}
+  height: 100%; */
+  /* backface-visibility: hidden;
+} */
 
-.flip-card-front {
-  padding-bottom: 20px;
-}
+ .flip-card-front {
+  padding: 2px 16px;
+} 
 
-.flip-card-back {
+/* .flip-card-back {
   -ms-transform: rotateY(-180deg); /* IE 9 */
-  -webkit-transform: rotateY(-180deg); /* Safari */
-  transform: rotateY(-180deg); 
+  /* -webkit-transform: rotateY(-180deg); Safari */
+  /* transform: rotateY(-180deg); 
   padding-bottom: 300px;
-}
+}   */
