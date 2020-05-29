@@ -11,7 +11,7 @@
   <br/>
   @using (Html.BeginForm())
   {
-    @Html.TextBoxFor(model => model.Name, null, new { placeholder="Client Name...", @class="text-box" })
+    @Html.TextBoxFor(model => model.Name, null, new { placeholder="Client Name...", @class="text-box", required="required" })
     <br/>
     @Html.DropDownList("StylistId", null, "Select Stylist", new {  @class="text-box" })
     <br/>
