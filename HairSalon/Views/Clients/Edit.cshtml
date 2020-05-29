@@ -4,21 +4,26 @@
 
 @model HairSalon.Models.Client
 
-<h2>Edit</h2>
+<div class="flip-card" style="width: 500px">
+  <h2>Edit</h2>
 
-<h3>Edit client: @Html.DisplayFor(model => model.Name)</h3>
+  <h3>Edit client: @Html.DisplayFor(model => model.Name)</h3>
+  <br/>
+  <br/>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.ClientId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.ClientId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
+    @* @Html.LabelFor(model => model.Name) *@
+    @Html.EditorFor(model => model.Name, null, new { @class="text-box" })
+    <br/>
+    @* @Html.Label("Select Stylist") *@
+    @Html.DropDownList("StylistId", null, "Select Stylist", new { @class="text-box" })
+    <br/>
+    <input type="submit" class="btn" value="Save" />
+  }
+  <br/>
 
-  @Html.Label("Select Stylist")
-  @Html.DropDownList("StylistId")
-
-  <input type="submit" class="btn-block" value="Save" />
-}
-
-<button>@Html.ActionLink("Back to all clients", "Index") </button>
+  <button class="btn">@Html.ActionLink("Back to all clients", "Index") </button>
+</div>

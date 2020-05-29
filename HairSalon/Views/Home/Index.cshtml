@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <div class="container">
-      <div class="render">
+    <div>
+      <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav ml-auto ">
+          <li>@Html.ActionLink("Home", "Index", "Home")</li>
+          <li>@Html.ActionLink("See all stylists", "Index", "Stylists")</li>
+          <li>@Html.ActionLink("See all clients", "Index", "Clients")</li>
+        </ul>
+      </nav>
+      @* <div class="render"> *@
+        <div class="body">
         <h1>Welcome to Hair Salon!</h1>
-        <h3>@Html.ActionLink("See all stylists", "Index", "Stylists")</h3>
-         <h3>@Html.ActionLink("See all clients", "Index", "Clients")</h3>
       </div>
     </div>
   </body>

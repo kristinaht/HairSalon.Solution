@@ -4,18 +4,21 @@
 
 
 @model HairSalon.Models.Stylist
-<div class="render">
+<div class="flip-card" style="width: 500px">
 <h3>Add a new stylist</h3>
+<br/>
+<br/>
 @using(Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(mode => Model.Name)
+  @Html.TextBoxFor(model => model.Name, null, new { placeholder ="Stylist Name...", @class="text-box"})
+  
   <br>
 
-  @Html.LabelFor(model => model.Specialty)
-  @Html.TextBoxFor(model => model.Specialty)
-  <input type = "submit" class="btn-block" value = "Add stylist" />
+  @Html.TextBoxFor(model => model.Specialty, new { placeholder = "Stylist Specialty...", @class="text-box"})
+  <br/>
+  <input type = "submit" class="btn" value = "Add stylist" />
 }
-
-<p>@Html.ActionLink("Back to Stylists", "Index")</p>
+<br/>
+<br/>
+<button class="btn">@Html.ActionLink("Back to Stylists", "Index")</button>
 </div>

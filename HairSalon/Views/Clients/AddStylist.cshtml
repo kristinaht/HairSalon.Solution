@@ -4,18 +4,20 @@
 
 @model HairSalon.Models.Client
 
-<h2>Add a stylist for client: @Html.DisplayFor(model => model.Name)</h2>
+<div class="flip-card">
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.ClientId)
-  
-  @Html.Label("Select Stylist")
-  @Html.DropDownList("StylistId")
+  <h2>Add a stylist for client: @Html.DisplayFor(model => model.Name)</h2>
 
-  <input type="submit" value="Save" />
-}
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.ClientId)
+    
+    @Html.Label("Select Stylist")
+    @Html.DropDownList("StylistId")
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+    <input type="submit" value="Save" class="btn" />
+  }
 
+  <button class="btn">@Html.ActionLink("Back to list", "Index")</button>
+</div>
 

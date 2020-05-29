@@ -2,11 +2,9 @@
   Layout = "_Layout";
 }
 
-
-
 @model HairSalon.Models.Stylist;
 
-<div class="flip-card" style="width: 300px;">
+<div class="flip-card" style="width: 500px;">
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <h2>Stylist Details</h2>
@@ -14,7 +12,7 @@
       <h3>@Html.DisplayNameFor(model => model.Specialty) : @Html.DisplayFor(model => model.Specialty)</h3>
     </div>
     <div class="flip-card-back">
-      <h2>Clients:</h2>
+      <h2>Existing Clients for this Stylist:</h2>
       <ul>
         @if (@Model.Clients.Count == 0)
         {
@@ -22,7 +20,6 @@
         }
         else
         {
-          <h4>Existing clients for this stylist:</h4>
           <ul>
           @foreach(var join in Model.Clients)
           {  
@@ -30,21 +27,13 @@
           }
           </ul>
         }
-
-        @* @foreach(Client client in Model.Clients)
-        {
-          @* <li>Client | @client.Name</li> *@
-          @* <li><h4>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId}, new { style="text-decoration: none;"})</h4></li>
-        }  *@
       </ul>
     </div>
   </div>  
+  <button class="btn">@Html.ActionLink("Back to Stylists", "Index")</button>
+  <button class="btn">@Html.ActionLink("Edit", "Edit", new {id = Model.StylistId })</button>
+  <button class="btn">@Html.ActionLink("Delete", "Delete", new {id = Model.StylistId })</button>
+  <button class="btn">@Html.ActionLink("Add a client", "Create", "Clients")</button>
 </div>
-
-<p>@Html.ActionLink("Back to Stylists", "Index")</p>
-<p>@Html.ActionLink("Edit", "Edit", new {id = Model.StylistId })</p>
-<p>@Html.ActionLink("Delete", "Delete", new {id = Model.StylistId })</p>
-<p>@Html.ActionLink("Add a client", "Create", "Clients")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
 
 

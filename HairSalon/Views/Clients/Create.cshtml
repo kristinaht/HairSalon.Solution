@@ -5,16 +5,18 @@
 
 @model HairSalon.Models.Client
 
-<h3>Add a new Client:</h3>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-
-  @Html.Label("Select Stylist")
-  @Html.DropDownList("StylistId")
-  
-  <input type="submit" value="add client">
-}
-
-<p>@Html.ActionLink("Show all clients", "Index")</p>
+<div class="flip-card" style="width: 500px">
+  <h3>Add a new Client:</h3>
+  <br/>
+  <br/>
+  @using (Html.BeginForm())
+  {
+    @Html.TextBoxFor(model => model.Name, null, new { placeholder="Client Name...", @class="text-box" })
+    <br/>
+    @Html.DropDownList("StylistId", null, "Select Stylist", new {  @class="text-box" })
+    <br/>
+    <input type="submit" value="add client" class="btn">
+  }
+  <br/>
+  <button class="btn">@Html.ActionLink("Show all clients", "Index")</button>
+</div>
